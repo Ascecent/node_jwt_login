@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.88.1" />
+    <title>Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      #formContainer {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      html {
+        overflow: hidden;
+      }
+
+      body {
+        background: #c31432;
+        background: -webkit-linear-gradient(to right, #240b36, #c31432);
+        background: linear-gradient(to right, #240b36, #c31432);
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main id="formContainer">
+      <form
+        class="card login-form d-flex align-items-center"
+        action="/login"
+        method="post"
+      >
+        <img
+          class="mb-4"
+          src="img/bootstrap-logo.svg"
+          alt="Bootstrap icon"
+          width="72"
+          height="57"
+        />
+        <h1 class="h3 mb-3 fw-normal">Log in</h1>
+
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="userEmail"
+            name="userEmail"
+            placeholder="example@example.com"
+            title="Email address"
+          />
+          <label for="userEmail">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="userPassword"
+            name="userPassword"
+            placeholder=""
+            title="Password"
+          />
+          <label for="userPassword">Password</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary mt-5" type="submit">
+          Login
+        </button>
+        <a class="w-100 btn btn-lg btn-secondary mt-3" href="/signup">
+          Sign up
+        </a>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+      </form>
+    </main>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (alert) { %>
+    <script>
+      Swal.fire({
+        title: "<%= title %>",
+        text: "<%= msg %>",
+        icon: "<%= icon %>",
+        showConfirmButton: "<%= confirmButton %>",
+        timerProgressBar: "<%= timerProgressBar %>",
+        timer: "<%= timer %>",
+      }).then(() => {
+        window.location = "/<%= route %>";
+      });
+    </script>
+    <% } %>
+  </body>
+</html>

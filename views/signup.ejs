@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <style>
+      @media (min-width: 1025px) {
+        .h-custom {
+          height: 100vh !important;
+        }
+      }
+
+      body {
+        background: #c31432; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #240b36,
+          #c31432
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      .form-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: hsl(0%, 0%, 0);
+        max-width: 50rem;
+        border-radius: 2rem;
+        padding: 2rem;
+        box-shadow: 0 0 2rem 15px rgba(255, 255, 255, 0.2);
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="d-flex justify-content-center pt-5">
+      <div class="h-100 form-container card p-0">
+        <div class="card-header p-0">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+            class="w-100"
+            style="border-top-left-radius: 1rem; border-top-right-radius: 1rem"
+            alt="Sample photo"
+          />
+        </div>
+
+        <div class="card-body w-100 p-4 p-md-5">
+          <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Sign up</h3>
+
+          <form class="px-md-2" action="/signup" method="post">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="userName"
+                name="userName"
+                placeholder=""
+                title="Full name"
+              />
+              <label for="userEmail">Full name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control"
+                id="userEmail"
+                name="userEmail"
+                placeholder=""
+                title="Email"
+              />
+              <label for="userEmail">Email</label>
+            </div>
+
+            <div class="form-floating">
+              <input
+                type="password"
+                class="form-control"
+                id="userPassword"
+                name="userPassword"
+                placeholder=""
+                title="Password"
+              />
+              <label for="userPassword">Password</label>
+            </div>
+
+            <div class="mt-5">
+              <button type="submit" class="btn btn-success btn-lg mb-1">
+                Signup
+              </button>
+              <a class="btn btn-danger btn-lg mb-1" href="/login"> Cancel </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (alert) { %>
+    <script>
+      Swal.fire({
+        title: "<%= title %>",
+        text: "<%= msg %>",
+        icon: "<%= icon %>",
+        showConfirmButton: "<%= confirmButton %>",
+        timerProgressBar: "<%= timerProgressBar %>",
+        timer: "<%= timer %>",
+      }).then(() => {
+        window.location = "/<%= route %>";
+      });
+    </script>
+    <% } %>
+  </body>
+</html>
